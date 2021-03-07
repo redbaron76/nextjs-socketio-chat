@@ -13,8 +13,7 @@
     "react-dom": "17.0.1",
     "socket.io": "^3.1.2",
     "socket.io-client": "^3.1.2",
-    "styled-components": "^5.2.1",
-    "zustand": "^3.3.3"
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
     "@emotion/react": "^11.1.5",
