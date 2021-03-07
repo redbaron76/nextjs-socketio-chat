@@ -9,6 +9,8 @@ interface IMsg {
 
 // create random user
 const user = "User_" + String(new Date().getTime()).substr(-3);
+
+// component
 const Index: React.FC = () => {
   const inputRef = useRef(null);
 
