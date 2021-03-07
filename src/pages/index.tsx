@@ -12,9 +12,6 @@ const user = "User_" + String(new Date().getTime()).substr(-3);
 const Index: React.FC = () => {
   const inputRef = useRef(null);
 
-  // connected flag
-  const [connected, setConnected] = useState<boolean>(false);
-
   // init chat and message
   const [chat, setChat] = useState<IMsg[]>([]);
   const [msg, setMsg] = useState<string>("");
@@ -22,13 +19,12 @@ const Index: React.FC = () => {
   useEffect((): any => {
     // connect to socket server
     const socket = SocketIOClient.connect(process.env.BASE_URL, {
-      path: "/api/socketio",
+      path: "/api/socketio"
     });
 
     // log socket connection
     socket.on("connect", () => {
       console.log("SOCKET CONNECTED!", socket.id);
-      setConnected(true);
     });
 
     // update chat on new message dispatched
@@ -46,16 +42,16 @@ const Index: React.FC = () => {
       // build message obj
       const message: IMsg = {
         user,
-        msg,
+        msg
       };
 
       // dispatch message to other users
       const resp = await fetch("/api/chat", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
-        body: JSON.stringify(message),
+        body: JSON.stringify(message)
       });
 
       // reset field if OK
@@ -98,9 +94,8 @@ const Index: React.FC = () => {
                 ref={inputRef}
                 type="text"
                 value={msg}
-                placeholder={connected ? "Type a message..." : "Connecting..."}
+                placeholder="Type a message..."
                 tw="w-full h-full rounded shadow border-gray-400 border px-2"
-                disabled={!connected}
                 onChange={(e) => {
                   setMsg(e.target.value);
                 }}
@@ -115,7 +110,6 @@ const Index: React.FC = () => {
               <button
                 tw="bg-blue-500 rounded shadow text-sm text-white h-full px-2"
                 onClick={sendMessage}
-                disabled={!connected}
               >
                 SEND
               </button>
