@@ -2,7 +2,17 @@ This is a simple realtime chat example that demonstrates how to setup a Socket.i
 
 ## Getting Started
 
-First, run the development server:
+1. Clone this repo and `cd` into it
+
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
