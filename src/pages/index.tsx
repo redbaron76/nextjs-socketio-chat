@@ -19,7 +19,7 @@ const Index: React.FC = () => {
   useEffect((): any => {
     // connect to socket server
     const socket = SocketIOClient.connect(process.env.BASE_URL, {
-      path: "/api/socketio",
+      path: "/api/socketio"
     });
 
     // log socket connection
@@ -42,16 +42,16 @@ const Index: React.FC = () => {
       // build message obj
       const message: IMsg = {
         user,
-        msg,
+        msg
       };
 
       // dispatch message to other users
       const resp = await fetch("/api/chat", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
-        body: JSON.stringify(message),
+        body: JSON.stringify(message)
       });
 
       // reset field if OK
@@ -66,7 +66,7 @@ const Index: React.FC = () => {
     <div tw="flex flex-col w-full h-screen">
       <div tw="py-4 text-white  bg-blue-500 sticky top-0">
         <h1 tw="text-center text-2xl font-semibold">Realtime Chat App</h1>
-        <h2 tw="mt-2 text-center"> in Next.js and Socket.io</h2>
+        <h2 tw="mt-2 text-center">in Next.js and Socket.io</h2>
       </div>
       <div tw="flex flex-col flex-1 bg-gray-200">
         <div tw="flex-1 p-4 font-mono">
