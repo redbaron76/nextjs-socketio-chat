@@ -19,7 +19,7 @@ const Index: React.FC = () => {
   useEffect((): any => {
     // connect to socket server
     const socket = SocketIOClient.connect(process.env.BASE_URL, {
-      path: "/api/socketio",
+      path: "/api/socketio"
     });
 
     // log socket connection
@@ -42,16 +42,16 @@ const Index: React.FC = () => {
       // build message obj
       const message: IMsg = {
         user,
-        msg,
+        msg
       };
 
       // dispatch message to other users
       const resp = await fetch("/api/chat", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
-        body: JSON.stringify(message),
+        body: JSON.stringify(message)
       });
 
       // reset field if OK
