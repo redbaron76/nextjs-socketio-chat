@@ -54,8 +54,6 @@ const Index: React.FC = () => {
         body: JSON.stringify(message),
       });
 
-      // setChat([...chat, message]);
-
       // reset field if OK
       if (resp.ok) setMsg("");
     }
@@ -67,9 +65,7 @@ const Index: React.FC = () => {
   return (
     <div tw="flex flex-col w-full h-screen">
       <div tw="py-4 text-white  bg-blue-500 sticky top-0">
-        <h1 tw="text-center text-2xl font-semibold">
-          Serverless Realtime Chat
-        </h1>
+        <h1 tw="text-center text-2xl font-semibold">Realtime Chat App</h1>
         <h2 tw="mt-2 text-center"> in Next.js and Socket.io</h2>
       </div>
       <div tw="flex flex-col flex-1 bg-gray-200">

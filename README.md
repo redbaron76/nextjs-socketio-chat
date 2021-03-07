@@ -25,3 +25,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## How it works
 
 Open multiple browser windows and start a chat to see it in action.
+
+## Caveat
+
+It doesn't work (yet) in serverless environments.
+A running server instance is still needed.
+
+## DEMO
+
+Run it on [Codesandbox.io](https://codesandbox.io/s/nextjs-socketio-chat-piffv)
